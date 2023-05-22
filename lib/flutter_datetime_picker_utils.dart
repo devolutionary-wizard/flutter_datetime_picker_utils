@@ -3,7 +3,6 @@ library flutter_datetime_picker_utils;
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_datetime_picker_utils/src/datetime_picker_theme.dart';
 import 'package:flutter_datetime_picker_utils/src/date_model.dart';
 import 'package:flutter_datetime_picker_utils/src/i18n_model.dart';

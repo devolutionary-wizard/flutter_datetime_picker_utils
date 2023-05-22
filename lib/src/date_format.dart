@@ -43,7 +43,7 @@ const String m = 'm';
 /// Example:
 ///     formatDate(new DateTime(1989, 2), [MM]);
 ///     // => february
-const String MM = 'MM';
+const String mM = 'MM';
 
 /// Outputs month as short name
 ///
@@ -84,7 +84,7 @@ const String w = 'w';
 ///     // => 53
 ///     formatDate(new DateTime(1989, 2, 21), [W]);
 ///     // => 08
-const String WW = 'WW';
+const String wW = 'WW';
 
 /// Outputs week in year compactly
 ///
@@ -119,7 +119,7 @@ const String h = 'h';
 /// Example:
 ///     formatDate(new DateTime(1989, 02, 1, 15), [HH]);
 ///     // => 15
-const String HH = 'HH';
+const String hH = 'HH';
 
 /// Outputs hour (0 to 23) compactly
 ///
@@ -169,7 +169,7 @@ const String s = 's';
 ///     // => 099
 ///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0), [SS]);
 ///     // => 009
-const String SSS = 'SSS';
+const String sSS = 'SSS';
 
 /// Outputs millisecond compactly
 ///
@@ -271,7 +271,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
     }
   }
 
-  final sb = new StringBuffer();
+  final sb = StringBuffer();
 
   for (String format in formats) {
     if (format == yyyy) {
@@ -282,7 +282,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
       sb.write(digits(date.month, 2));
     } else if (format == m) {
       sb.write(date.month);
-    } else if (format == MM) {
+    } else if (format == mM) {
       final monthLong =
       i18nObjInLocaleLookup(locale, 'monthLong', date.month - 1);
       sb.write(monthLong);
@@ -298,7 +298,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
       sb.write((date.day + 7) ~/ 7);
     } else if (format == W) {
       sb.write((dayInYear(date) + 7) ~/ 7);
-    } else if (format == WW) {
+    } else if (format == wW) {
       sb.write(digits((dayInYear(date) + 7) ~/ 7, 2));
     } else if (format == D) {
       String day = i18nObjInLocaleLookup(locale, 'day', date.weekday - 1);
@@ -306,7 +306,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
         day = "($day)";
       }
       sb.write(day);
-    } else if (format == HH) {
+    } else if (format == hH) {
       sb.write(digits(date.hour, 2));
     } else if (format == H) {
       sb.write(date.hour);
@@ -326,7 +326,7 @@ String formatDate(DateTime date, List<String> formats, LocaleType locale) {
       sb.write(digits(date.second, 2));
     } else if (format == s) {
       sb.write(date.second);
-    } else if (format == SSS) {
+    } else if (format == sSS) {
       sb.write(digits(date.millisecond, 3));
     } else if (format == S) {
       sb.write(date.second);
@@ -363,4 +363,4 @@ String digits(int value, int length) {
 }
 
 int dayInYear(DateTime date) =>
-    date.difference(new DateTime(date.year, 1, 1)).inDays;
+    date.difference(DateTime(date.year, 1, 1)).inDays;
