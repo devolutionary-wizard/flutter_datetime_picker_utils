@@ -1,5 +1,5 @@
 name: flutter_datetime_picker_utils
-description: A new Flutter project.
+description: A date time picker for flutter, you can choose date / time / date&time in English Dutch and Chinese, and you can also custom your own picker content.
 homepage: https://github.com/seanglayz/flutter_datetime_picker_utils
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
